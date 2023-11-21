@@ -9,21 +9,21 @@ class BTS:
 
 
 def closestValueBts(tree: BTS, target: int) -> int:
-    closetValue = None
+    closestValue = None
 
     def traverseTree(tree: Optional[BTS]):
-        nonlocal closetValue
+        nonlocal closestValue
         if tree is None:
             return
 
-        if closetValue is None:
-            closetValue = tree.value
-        elif abs(closetValue - target) > abs(tree.value - target):
-            closetValue = tree.value
+        if closestValue is None:
+            closestValue = tree.value
+        elif abs(closestValue - target) > abs(tree.value - target):
+            closestValue = tree.value
 
         traverseTree(tree.left)
         traverseTree(tree.right)
 
     traverseTree(tree)
 
-    return closetValue
+    return closestValue
