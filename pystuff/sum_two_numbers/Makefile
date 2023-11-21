@@ -1,7 +1,7 @@
 .PHONY: test setup
 
 setup:
-	pip install -r requirements.txt
+	.venv/bin/pip install -r requirements.txt
 
 test:
-	py.test
+	.venv/bin/pytest
